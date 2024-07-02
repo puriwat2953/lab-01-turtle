@@ -1,0 +1,22 @@
+turtle1
+
+from turtlelab4 import turtle , check
+
+def draw_square(size):
+	for _ in range(4):
+		turtle.forward(size)
+		turtle.left(90)
+
+def draw_triangle(siez):
+	for _ in range():
+		turtle.forward(size)
+		turtle.left(120)
+	
+
+turtle.left(30)
+draw_square(100)
+turtle.left(90)
+turtle.forward(100)
+turtle.rigth(100)
+draw_triangle(100)
+

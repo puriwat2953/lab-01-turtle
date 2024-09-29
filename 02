@@ -1,0 +1,24 @@
+from math import pi,e
+def findE(n = int):
+    m = float(input(f"m{n}(g)  = "))
+    t = float(input(f"T{n}(°C) = "))
+    X = 0.230104 * 10 ** (-2.90743)
+    E = (m*(t+e))/(2*pi*X)
+    #print(f"The Saitron energy is  {E:.5f} J")
+    return E
+#main
+box = []
+for i in range(1,3):
+    x = findE(i)
+    box.append(x)
+
+x1 = float(input('x1 = '))    
+y1 = float(input('y1 = '))   
+x2 = float(input('x2 = '))   
+y2 = float(input('y2 = '))
+d = ((x1-x2)**2 + (y1-y2)**2)**0.5
+E = sum(box)/1000
+if d > E:
+    print("Not Collided!")
+else:
+    print("Collided!")

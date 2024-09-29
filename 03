@@ -1,0 +1,67 @@
+while True:
+    box = []
+    
+    age = int(input("Age: "))
+    if age <= 0:
+        print("Age must greater than 0!")
+        break
+    box.append(("Age",age))
+    
+    parent = input("Parent? (Y/N): ")
+    if parent == "N" :
+        pass
+    elif parent == "Y" :
+        pass
+    else:
+        print("Parent input must be 'Y' or 'N'!")
+        break
+    box.append(("Parent?",parent))
+    
+    tt = input("Ticket Type (Normal/VIP): ")
+    if tt == "Normal"  :
+        pass
+    elif tt == "VIP":
+        pass
+    else:
+        print("Ticket Type must be 'Normal' or 'VIP'!")
+        break
+    box.append(("Ticket Type",tt))
+    
+    sou = float(input("Souvenir Pay: "))
+    if sou < 0:
+        print("Souvenir input must be 0 or positive number!")
+        break
+    box.append(("Souvenir",f"{sou:.2f}"))
+    #check session
+    if age >= 18 :
+
+        if tt == "VIP":
+            s = 1
+        elif tt == "Normal" and sou >= 500:
+            s = 2
+        elif tt == "Normal" and sou < 500:
+            s = 3
+    else:
+        if parent =="N":
+            s = "No Entry"
+        elif tt == "VIP":
+            s = 4
+        elif tt == "Normal" and sou >= 500:
+            s = 5
+        elif tt == "Normal" and sou < 500:
+            s = 6
+    #print(s)
+    box.append(("Session",s))
+
+
+    #print(box)
+    print('--------------------------')
+    for i in box:
+        #print(i)
+        print("|",end=" ")
+        space = 12 - len(i[0])
+        print(f"{i[0]}{space*' '}|",end="")
+        space = 9 - len(str(i[1]))
+        print(f"{space*' '}{i[1]} |")   
+    print('--------------------------')    
+    break

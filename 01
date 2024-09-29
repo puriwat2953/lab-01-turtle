@@ -1,0 +1,6 @@
+from math import pi,e
+m = float(input("m(g)  = "))
+t = float(input("T(°C) = "))
+X = 0.230104 * 10 ** (-2.90743)
+E = (m*(t+e))/(2*pi*X)
+print(f"The Saitron energy is  {E:.5f} J")
